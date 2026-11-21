@@ -1,0 +1,34 @@
+import datetime
+import math
+import re
+import socket
+import ssl
+from html.parser import HTMLParser
+from urllib.error import URLError
+from urllib.parse import urljoin, urlparse
+from urllib.request import Request, urlopen
+
+# Configuration lists
+SUSPICIOUS_TLDS = {
+    ".tk", ".ml", ".ga", ".cf", ".gq", ".xyz", ".top",
+    ".work", ".click", ".loan", ".zip", ".mov", ".gq", ".ru"
+}
+
+URL_SHORTENERS = {
+    "bit.ly", "tinyurl.com", "t.co", "goo.gl", "ow.ly",
+    "is.gd", "buff.ly", "rb.gy", "cutt.ly", "shorturl.at"
+}
+
+SUSPICIOUS_KEYWORDS = {
+    "login", "signin", "verify", "update", "secure", "account",
+    "bank", "confirm", "password", "wallet", "suspend", "unlock",
+    "billing", "support", "free", "bonus", "kyc"
+}
+
+PROTECTED_BRANDS = {
+    "google", "paypal", "amazon", "microsoft", "apple", "netflix",
+    "facebook", "instagram", "linkedin", "chase", "wellsfargo",
+    "hdfcbank", "icicibank", "onlinesbi", "paytm", "phonepe"
+}
+
+MULTI_PART
